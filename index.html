@@ -21,13 +21,17 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">GarmondBacolod</a>
+				<a class="navbar-brand" href="#" onclick="window.location.reload(true);">GarmondBacolod</a>
 			</div>
 			<div class="collapse navbar-collapse" id="mainNavBar">
+                <ul class="nav navbar-nav">
+					<li><a href="#MyProjects">Projects</a></li>
+					<li><a href="#MyLabs">Labs</a></li>
+				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#">Home</a></li>
-					<li><a href="#">Projects</a></li>
+                    <li><a href="#">Music</a></li>
 					<li><a href="#">Social</a></li>
+                    <li><a href="#">Contact</a></li>
 				</ul>
 			</div>
         </div>				
@@ -38,12 +42,12 @@
             <center>
                 <img src="Images/garmond.jpg" class="img-circle img-responsive" alt="IMAGE" width="275" height="250" align="middle">
                 <section>
-                    <h3 id="MyProjects">Hello, my name is Garmond. <br> I'm a Developer living in Manila, PH.</h3>
+                    <h3>Hello, my name is Garmond. <br> I'm a Developer living in Manila, PH.</h3>
                 </section>
             </center>
         </div>
 
-        <div class="container-fluid bg-3 text-center">
+        <div class="container-fluid bg-3 text-center" id="MyProjects">
             <h1 style="margin-bottom: 30px;">Some of my Works</h1>
             <div class="row">
                 <div class="col-sm-4 div-proj" onclick="OpenBmiCalculator();">
@@ -64,7 +68,7 @@
             </div>
         </div>
         
-        <div class="container-fluid bg-3 text-center">
+        <div class="container-fluid bg-3 text-center" id="MyLabs">
             <center>
                 <h1 style="margin-top: 35px; margin-bottom: 30px;">My Labs</h1>
             </center>
