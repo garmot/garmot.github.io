@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>BMI Calculator</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!----jQuery----->
+    <script src="../../Library/jquery/jquery-1.11.2/jquery-1.11.2.js"></script>
+    <!----Bootstrap----->
+	<script src="../../Library/bootstrap/bootstrap-3.3.7/js/bootstrap.js"></script>	
+    <link href="../../Library/bootstrap/bootstrap-3.3.7/css/bootstrap.css" rel="stylesheet">    
+    <!----Slider---->
+	<script src="../../Library/slider/js/bootstrap-slider.min.js"></script>
+	<link href="../../Library/slider/css/bootstrap-slider.min.css" rel="stylesheet">
+	<script src="../../Library/slider/js/jquery.easing.1.3.js"></script>
+    <!----Bar indicator---->
+	<script src="../../Library/barIndicator/js/jquery-barIndicator.js"></script>
+	<link href="../../Library/barIndicator/css/bi-style.css" rel="stylesheet">
+    <!----Radial indicator---->
+	<script src="../../Library/radialIndicator/js/radialIndicator.custom.color.range.js"></script>
+    <!----jQWidget---->
+	<link href="../../Library/jqwidgets/jqwidgets-ver5.4.0/styles/jqx.base.css" rel="stylesheet">
+	<script src="../../Library/jqwidgets/jqwidgets-ver5.4.0/jqxcore.js"></script>
+	<script src="../../Library/jqwidgets/jqwidgets-ver5.4.0/jqxbuttons.js"></script>
+	<script src="../../Library/jqwidgets/jqwidgets-ver5.4.0/jqxnumberinput.js"></script>	
+    <!--App Script-->
+    <script src="../bmi-calculator/Scripts/index.js"></script>
+    <!--App Styles-->
+    <link href="Styles/index.css" rel="stylesheet">
+</head>
+
+<body>	
+	<div class="container">
+		<div class="jumbotron">
+			<h1>BMI Calculator</h1>
+			<p>
+				<!--Body mass index, or BMI, is used to determine whether you are in a healthy weight range for your height.-->
+				Body mass index (BMI) is a measure of body fat based on height and weight that applies to adult men and women.				
+			</p>
+		</div>
+
+		<ul class="nav nav-tabs">
+			<li class = "active"><a data-toggle="tab" href="#metricTab">Metric</a></li>
+			<li><a data-toggle="tab" href="#englishTab">English</a></li>
+			<li><a data-toggle="tab" href="#otherTab">Other</a></li>
+		</ul>
+		
+		<div class="tab-content">
+			<div id="metricTab" class="tab-pane fade in active">
+				<div class="row">
+					<div class="col-sm-5">	
+						<h3>Height</h3>                        
+						<div class="well">
+                            <div id="divHtSlider">
+                                <input id="htMetric" data-slider-id='htMetricSlider' type="text" data-slider-min="130" data-slider-max="200" data-slider-step="1" data-slider-value="170" data-slider-tooltip="hide"  data-slider-handle="square"/>
+                            </div>		
+                            
+                            <span class="visible-sm visible-xs">
+				                <br/><br/>
+						    </span>
+                            
+                            <div class="input-group">    
+                                <div id="htMtSb"></div>	
+                                <span>&nbsp;cm</span>	      
+                            </div>
+						</div>
+					</div>
+					<div class="col-sm-5">	
+						<h3>Weight</h3>
+						<div class="well">
+							<div id="divWtSlider">
+								<input id="wtMetric" data-slider-id='wtMetricSlider' type="text" data-slider-min="30" data-slider-max="150" data-slider-step="1" data-slider-value="70" data-slider-tooltip="hide"  data-slider-handle="round"/>
+							</div>
+
+                            <span class="visible-sm visible-xs">
+				                <br/><br/>
+						    </span>                            
+                            
+                            <div class="input-group">    
+                                <div id="wtMtSb"></div>	
+                                <span>&nbsp;kg</span>	
+                            </div>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<span class="visible-lg visible-md visible-sm">
+							<br/><br/><br/>
+						</span>
+						<a href="#radialSec"><button id="btnCalcMetric" type="button" class="btn btn-default btn-lg" onclick="calculate('metric')">Calculate</button></a>
+					</div>				
+				</div>			
+			</div>
+			<div id="englishTab" class="tab-pane fade">
+				<div class="row">
+					<div class="col-sm-5">	
+						<h3>Height</h3>
+						<div class="well">
+							<div id="divHtSliderEn">
+								<input id="htEn" data-slider-id='htEnSlider' type="text" data-slider-min="130" data-slider-max="200" data-slider-step="1" data-slider-value="170" data-slider-tooltip="hide"  data-slider-handle="square"/>
+							</div>
+                            
+                             <span class="visible-sm visible-xs">
+				                <br/><br/>
+						    </span>                           
+                            
+                            <div class="input-group">    
+                                <div id="htFtEnSb"></div>	
+                                <span id="spanFt">&nbsp;ft&nbsp;</span>	
+                                <div id="htInEnSb"></div>	
+                                <span id="spanIn">&nbsp;in</span>			
+                                <span >&nbsp;</span>	
+                            </div>
+						</div>
+					</div>
+					<div class="col-sm-5">	
+						<h3>Weight</h3>
+						<div class="well">
+							<div id="divWtSliderEn">
+								<input id="wtEn" data-slider-id='wtMetricSlider' type="text" data-slider-min="66" data-slider-max="331" data-slider-step="1" data-slider-value="154" data-slider-tooltip="hide"  data-slider-handle="round"/>
+							</div>
+                            
+                            <span class="visible-sm visible-xs">
+				                <br/><br/>
+						    </span>                         
+                            
+                            <div class="input-group">   
+                                <div id="wtEnSb"></div>	
+                                <span>&nbsp;lbs</span>	
+                            </div>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<span class="visible-lg visible-md visible-sm">
+							<br/><br/><br/>
+						</span>
+						<a href="#radialSec"><button id="btnCalcMetric" type="button" class="btn btn-default btn-lg" onclick="calculate('english')">Calculate</button></a>
+					</div>				
+				</div>
+			</div>
+			<div id="otherTab" class="tab-pane fade">
+                <div class="row">
+                    <div class="col-sm-5">                        
+                        <h3>Height</h3>
+                        <div class="well">
+                            <div class="form-inline">   
+                                <div id="groupOthHtFt" class="input-group">
+                                    <input id="othHtFt" type="text" class="form-control" placeholder="Feet" onkeypress="return onKeyPress(this, event)" oninput="onInput(this, event)" >
+
+                                    <div class="input-group-btn">
+                                        <button id="othHtFtBtnDown" type="button" class="btn btn-danger" onmousedown="onMouseDown(this, event)">
+                                           <span id = "othWtFtBtnDownS" class="glyphicon glyphicon-triangle-bottom"></span> 
+                                        </button>
+                                       <button id="othHtFtBtnUp" type="button" class="btn btn-danger" onmousedown="onMouseDown(this, event)">
+                                           <span class="glyphicon glyphicon-triangle-top"></span>                                   
+                                        </button>                                                                    
+                                    </div>                            
+                                </div>
+
+                                <div id="groupOthHtIn" class="input-group">                            
+                                    <input id="othHtIn" type="text" class="form-control" placeholder="Inch" onkeypress="return onKeyPress(this, event)" oninput="onInput(this, event)">
+                                    <div class="input-group-btn">
+                                        <button id="othHtInBtnDown" type="button" class="btn btn-danger" onmousedown="onMouseDown(this, event)">
+                                           <span class="glyphicon glyphicon-triangle-bottom"></span>                                   
+                                        </button>  
+                                        <button id="othHtInBtnUp" type="button" class="btn btn-danger" onmousedown="onMouseDown(this, event)">
+                                           <span class="glyphicon glyphicon-triangle-top"></span>                                   
+                                        </button>                                                                      
+                                    </div> 
+                                </div>     
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                         <h3>Weight</h3>
+                         <div class="well">                             
+                            <div id="groupOthWt" class="input-group">
+                                <input id="othWt" type="text" class="form-control" placeholder="Kilogram" onkeypress="return onKeyPress(this, event)" onchange="onChange(this, event)" >
+
+                                <div class="input-group-btn">
+                                    <button id="othWtBtnDown" type="button" class="btn btn-danger" onmousedown="onMouseDown(this, event)">
+                                       <span id = "othWtFtBtnDownS" class="glyphicon glyphicon-triangle-bottom"></span> 
+                                    </button>
+                                   <button id="othWtBtnUp" type="button" class="btn btn-danger" onmousedown="onMouseDown(this, event)">
+                                       <span class="glyphicon glyphicon-triangle-top"></span>                                   
+                                   </button>                                                                    
+                                </div>                            
+                            </div>
+                        </div>
+                    </div>    
+                    <div class="col-sm-2">
+						<span class="visible-lg visible-md visible-sm">
+							<br/><br/><br/>
+						</span>                     
+                        <a href="#radialSec">
+                            <button id="btnCalcOther" type="button" class="btn btn-default btn-lg" onclick="calculate('other')"><span>Calculate</span>
+                        </button></a>
+                    </div>
+                </div>
+                                
+                <div class="row" id="divMsgArea">
+                    <div class="col-sm-12">                        
+                        <h4 id="msgArea">Info Message</h4>
+                    </div>
+                </div>
+			</div>
+		</div>
+		
+		<br/><br/>
+		
+		<div class="jumbotron" id="jumboDesc">
+			<ul>
+				<li>
+					<p id="desc1">
+						BMI is a useful measurement for most people over 18 years old. 
+						But it is only an estimate and it doesn’t take into account age, ethnicity, gender and body composition. 
+					</p>	
+				</li>
+				<li>
+					<p>
+						Speak to your doctor, an Accredited Practising Dietitian or a health practitioner about your weight.
+					</p>
+				</li>
+				<li>
+					<p id="desc2">
+						This calculator shouldn’t be used for pregnant women or children.
+					</p>
+				</li>				
+			</ul>
+		</div>
+		
+		<div class="row">			
+			<div class="col-sm-12" id="radialSec">
+				<center>
+					<h1>Your BMI is<h1>
+					<span id="radial"></span>		
+				</center>
+				<br/><br/><br/><br/>
+			</div>
+		</div>
+				
+		<div class="row">
+			<div class="col-sm-12" id="barSec">	
+				<span id="bar">0</span>		
+				<br/><br/><br/>
+			</div>	
+		</div>
+		
+		<div class="row">
+			<div class="col-sm-12" id="infoSec">	
+				<img id="heart" src="Images/heart-icon-underweight.png" alt="IMG">
+				<span>&nbsp;</span>
+				<label id="heartDesc"></label>
+				<br/><br/><br/>
+			</div>
+		</div>
+		
+		<div class="jumbotron" id="jumboUnderWeight">
+			<h2>What you can do</h2>
+			<p>
+				Being underweight may weaken your immune system and put you at risk of osteoporosis. 
+				Ask your doctor what you can do to achieve a healthier weight or to address unexpected weight loss. 
+				For better health:
+			</p>
+			<ul>
+				<li>
+					<b>Embrace healthy eating</b> by choosing a variety of nutrient-rich foods, including fruits, 
+					vegetables and whole grains and small amounts of energy-dense foods like olive oil, nuts and dried fruits.
+				</li>
+				<li>
+					<b>Eat between-meal healthy snacks</b> — whole-grain crackers and nuts, for example — to increase calories.
+				</li>
+				<li>
+					<b>Exercise. </b> Your doctor may recommend strength training to promote lean muscle development and 
+					increase your weight in a healthy way.
+				</li>
+			</ul>
+		</div>
+		
+		<div class="jumbotron" id="jumboHealthy">
+			<h2>What you can do</h2>
+			<p>
+				Congratulations! Your healthy weight is well worth the effort. 
+				It reduces your risk of serious health conditions such as high blood pressure, heart disease, stroke and diabetes. 
+				To maintain a healthy weight:
+			</p>
+			<ul>
+				<li>
+					<b>Embrace healthy eating</b> by choosing a variety of nutrient-rich foods, including fruits, 
+					vegetables and whole grains and small amounts of energy-dense foods like olive oil, nuts and dried fruits.					
+				</li>
+				<li>
+					<b>Exercise.</b> Aim for 30 to 60 minutes of moderately intense activity daily.
+				</li>
+				<li>
+					<b>Set action goals</b> focused on specific healthy activities such as improving muscle tone through
+					strength training or starting a daily food and activity diary.
+				</li>
+			</ul>
+		</div>	
+		
+		<div class="jumbotron" id="jumboOverWeight">
+			<h2>What you can do</h2>
+			<p>
+				Consider the benefits of a healthy weight — a reduced risk of heart disease, stroke and diabetes, 
+				increased energy and improved self-esteem, for example. Then talk to your doctor about the best 
+				weight-loss approach for you. To start:
+			</p>
+			<ul>
+				<li>
+					<b>Embrace healthy eating</b> by choosing a variety of nutrient-rich foods, including fruits, 
+					vegetables and whole grains and small amounts of energy-dense foods like olive oil, nuts and dried fruits.					
+				</li>
+				<li>
+					<b>Exercise.</b> Ask your doctor about the right type of activities for you. Remember, even small 
+					amounts of activity provide immediate benefits.
+				</li>
+				<li>
+					<b>Set action goals</b> focused on specific healthy activities such as starting a 
+					daily food and activity diary.
+				</li>
+			</ul>
+		</div>	
+
+		<div class="jumbotron" id="jumboObese">
+			<h2>What you can do</h2>
+			<p>
+				Consider the benefits of a healthy weight — a reduced risk of heart disease, stroke and diabetes, 
+				increased energy and improved self-esteem, for example. Then talk to your doctor about the best 
+				weight-loss approach for you. To start:
+			</p>
+			<ul>
+				<li>
+					<b>Embrace healthy eating</b> by choosing a variety of nutrient-rich foods, including fruits, 
+					vegetables and whole grains and small amounts of energy-dense foods like olive oil, nuts and dried fruits.					
+				</li>
+				<li>
+					<b>Exercise.</b> Ask your doctor about the right type of activities for you. Remember, even small 
+					amounts of activity provide immediate benefits.
+				</li>
+				<li>
+					<b>Set action goals</b> focused on specific healthy activities such as starting a 
+					daily food and activity diary.
+				</li>
+			</ul>
+		</div>			
+	</div>	
+</body>
+
+</html>
+
+    

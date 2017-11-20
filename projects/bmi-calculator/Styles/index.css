@@ -1,0 +1,159 @@
+.sb {
+	width: 50px;
+}
+.jumbotron {
+	padding-right: 30px;
+	padding-left: 30px;
+	padding-top: 12px;
+	padding-bottom: 24px;
+}
+.no-gutter > [class*='col-'] {
+	padding-right:0;
+	padding-left:0;
+}
+.well {
+	background-color: #E0E0E0;
+}
+#htMetricSlider .slider-handle {
+	background: red;
+}
+#htMetricSlider .slider-selection {
+	background: #FF8282;
+}
+#wtMetricSlider .slider-handle {
+	background: green;
+}
+#wtMetricSlider .slider-selection {
+	background: #428041;
+}
+#btnCalcMetric {
+	display: block;
+	width: 100%;
+	padding: 12px;
+}
+#heartDesc{
+	color: #615b57;
+	font-size: 16px;
+}
+#jumboDesc{
+	padding-top: 30px;
+	padding-bottom: 10px;
+}
+#jumboDesc p{
+	font-size: 18px;
+}
+#jumboUnderWeight{
+	background-color: #D6EAF8;
+}
+#jumboUnderWeight p{
+	font-size: 16px;
+}	
+#jumboHealthy{
+	background-color: #D5F5E3;
+}	
+#jumboHealthy p{
+	font-size: 16px;
+}
+#jumboOverWeight{
+	background-color: #FCF3CF;
+}	
+#jumboOverWeight p{
+	font-size: 16px;
+}
+#jumboObese{
+	background-color: #FADBD8;
+}	
+#jumboObese p{
+	font-size: 16px;
+}
+#divHtSlider{
+	display: block; 
+	float: left;
+	margin-right: 15px;
+}
+#htMtSb{
+	display: block; 
+	float: left;
+	margin-right: 8px;
+}
+#divWtSlider{
+	display: block; 
+	float: left;
+	margin-right: 15px;
+}
+#wtMtSb{
+	display: block; 
+	float: left;
+	margin-right: 8px;	
+}	
+#htEnSlider .slider-handle {
+	background: red;
+}
+#htEnSlider .slider-selection {
+	background: #FF8282;
+}
+#divHtSliderEn{
+	display: block; 
+	float: left;
+	margin-right: 15px;
+}
+#htFtEnSb{
+	display: block; 
+	float: left;
+	margin-right: 8px;
+}
+#htInEnSb{
+	display: block; 
+	float: left;
+	margin-right: 8px;
+}
+#spanFt{
+	display: block; 
+	float: left;
+	margin-right: 16px;
+}
+#spanIn{
+	display: block; 
+	float: left;
+}
+#divWtSliderEn{
+	display: block; 
+	float: left;
+	margin-right: 15px;
+}
+#wtEnSb{
+	display: block; 
+	float: left;
+	margin-right: 8px;	
+}
+.btn:focus {
+  outline: none;
+}
+
+#groupOthHtFt{
+    width: 150px;
+    margin-right: 20px;
+}
+#othHtFt{
+    text-align: center;
+}
+#groupOthHtIn{
+    width: 150px;
+}
+#othHtIn{
+    text-align: center;
+}
+#groupOthWt{
+    width: 230px;
+}
+#othWt{
+    text-align: center;
+}
+#btnCalcOther {
+	display: block;
+	width: 100%;
+	padding: 12px;
+}
+#msgArea{
+    color: red;
+}

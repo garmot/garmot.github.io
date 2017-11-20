@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)http://www.ovais.me/javascript/bootstrap-3-modal-easy-way/ -->
+<html lang="en" prefix="og: http://ogp.me/ns#" class="wf-notoserif-n4-active wf-active"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.ovais.me/opensearch.xml" title="Ovais Blog Search">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="http://www.ovais.me/xmlrpc.php">
+<title>Bootstrap 3 Modal - Easy way - Mohd Ovais</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v5.6.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="I have written a wrapper function in JavaScript for Bootstrap 3 Modal. It does not need any HTML semantics to be present in DOM. The necessary HTML is added to document body when it is called first time, and later the cached instance is used. I tried to make it as simple as I think of and utilized the most used Bootstrap options for Modal.">
+<link rel="canonical" href="http://www.ovais.me/javascript/bootstrap-3-modal-easy-way/">
+<link rel="publisher" href="https://plus.google.com/+OvaisMeLearner">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Bootstrap 3 Modal - Easy way - Mohd Ovais">
+<meta property="og:description" content="I have written a wrapper function in JavaScript for Bootstrap 3 Modal. It does not need any HTML semantics to be present in DOM. The necessary HTML is added to document body when it is called first time, and later the cached instance is used. I tried to make it as simple as I think of and utilized the most used Bootstrap options for Modal.">
+<meta property="og:url" content="http://www.ovais.me/javascript/bootstrap-3-modal-easy-way/">
+<meta property="og:site_name" content="Mohd Ovais">
+<meta property="article:publisher" content="https://www.facebook.com/ovais.mohd">
+<meta property="article:tag" content="Bootstrap 3">
+<meta property="article:tag" content="jQuery">
+<meta property="article:section" content="JavaScript">
+<meta property="article:published_time" content="2015-02-17T23:12:13+00:00">
+<meta property="article:modified_time" content="2015-03-12T14:29:27+00:00">
+<meta property="og:updated_time" content="2015-03-12T14:29:27+00:00">
+<meta property="og:image" content="http://www.ovais.me/wp-content/uploads/2015/02/bootsrap-modal-normal.png">
+<meta property="og:image" content="http://www.ovais.me/wp-content/uploads/2015/02/bootsrap-modal-small.png">
+<meta property="og:image" content="http://www.ovais.me/wp-content/uploads/2015/02/bootsrap-modal-largel.png">
+<meta property="og:image" content="http://www.ovais.me/wp-content/uploads/2015/02/bootsrap-modal-footer.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="I have written a wrapper function in JavaScript for Bootstrap 3 Modal. It does not need any HTML semantics to be present in DOM. The necessary HTML is added to document body when it is called first time, and later the cached instance is used. I tried to make it as simple as I think of and utilized the most used Bootstrap options for Modal.">
+<meta name="twitter:title" content="Bootstrap 3 Modal - Easy way - Mohd Ovais">
+<meta name="twitter:site" content="@mohdovais">
+<meta name="twitter:image" content="http://www.ovais.me/wp-content/uploads/2015/02/bootsrap-modal-normal.png">
+<meta name="twitter:creator" content="@mohdovais">
+<script async="" src="./Bootstrap 3 Modal - Easy way - Mohd Ovais_files/analytics.js.download"></script><script src="./Bootstrap 3 Modal - Easy way - Mohd Ovais_files/webfont.js.download" type="text/javascript" async=""></script><script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"http:\/\/www.ovais.me\/","name":"Mohd Ovais","potentialAction":{"@type":"SearchAction","target":"http:\/\/www.ovais.me\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel="dns-prefetch" href="http://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Mohd Ovais » Feed" href="http://www.ovais.me/feed/">
+<link rel="alternate" type="application/rss+xml" title="Mohd Ovais » Comments Feed" href="http://www.ovais.me/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Mohd Ovais » Bootstrap 3 Modal – Easy way Comments Feed" href="http://www.ovais.me/javascript/bootstrap-3-modal-easy-way/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.ovais.me\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8.3"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b!==c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./Bootstrap 3 Modal - Easy way - Mohd Ovais_files/wp-emoji-release.min.js.download" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="theme-style-group-css" href="./Bootstrap 3 Modal - Easy way - Mohd Ovais_files/minify-b1-theme-style-c6c744bd543df21f80cfbeea475dea7f.css" type="text/css" media="all">
+<link rel="https://api.w.org/" href="http://www.ovais.me/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.ovais.me/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.ovais.me/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.8.3">
+<link rel="shortlink" href="http://www.ovais.me/?p=74">
+<link rel="alternate" type="application/json+oembed" href="http://www.ovais.me/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.ovais.me%2Fjavascript%2Fbootstrap-3-modal-easy-way%2F">
+<link rel="alternate" type="text/xml+oembed" href="http://www.ovais.me/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.ovais.me%2Fjavascript%2Fbootstrap-3-modal-easy-way%2F&amp;format=xml">
+<!--[if lt IE 9]>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.js"></script>
+	<![endif]-->
+<!--[if lt IE 8]>
+	<link rel='stylesheet' href='http://www.ovais.me/wp-content/themes/theme/style.ie7.css' type='text/css' media='all'></script>
+	<![endif]--><link rel="stylesheet" href="./Bootstrap 3 Modal - Easy way - Mohd Ovais_files/css">
+</head>
+
+<body class="post-template-default single single-post postid-74 single-format-standard">
+<div id="page" class="hfeed site">
+	<a class="skip-link screen-reader-text" href="http://www.ovais.me/javascript/bootstrap-3-modal-easy-way/#content">Skip to content</a>
+    <div id="sidebar">
+        <header id="masthead" class="site-header" role="banner">
+            <button type="button" id="menu-toggle" aria-controls="menu" aria-expanded="false"><span></span></button>
+            <div class="site-branding">
+                <h1 class="site-title"><a href="http://www.ovais.me/" rel="home" class="icon-mohdovais"><span class="screen-reader-text">Mohd Ovais</span></a></h1>
+            </div>
+        </header>
+        <div id="menu">
+            
+<div id="secondary" class="widget-area" role="complementary">
+	<aside id="search-2" class="widget widget_search"><form action="http://www.ovais.me/" class="search-form" method="get" role="search">
+    <span class="screen-reader-text">Search for:</span>
+    <input type="search" title="Search for:" name="s" value="" placeholder="Search …" class="search-field">
+    <span class="wrapper-search-submit">
+        <button type="submit" class="search-submit">
+            <i class="icon icon-search"></i> <span class="screen-reader-text">Search</span>
+        </button>
+    </span>
+</form></aside>		<aside id="recent-posts-3" class="widget widget_recent_entries">		<h4 class="widget-title">Recent Posts</h4>		<ul>
+					<li>
+				<a href="http://www.ovais.me/css/responsive-tables/">Responsive Tables</a>
+						</li>
+					<li>
+				<a href="http://www.ovais.me/web-technologies/adaptive-vs-responsive/">Adaptive vs Responsive</a>
+						</li>
+					<li>
+				<a href="http://www.ovais.me/javascript/bootstrap-3-dropdown-form-without-form-tag/">Bootstrap 3: Dropdown form fields without &lt;form&gt; tag</a>
+						</li>
+					<li>
+				<a href="http://www.ovais.me/css/float-label-pattern/">Float Label Pattern</a>
+						</li>
+					<li>
+				<a href="http://www.ovais.me/javascript/cross-browser-responsive-svg-with-png-fallback/">Cross-browser Responsive SVG with PNG fallback</a>
+						</li>
+				</ul>
+		</aside>		<aside id="categories-3" class="widget widget_categories"><h4 class="widget-title">Categories</h4>		<ul>
+	<li class="cat-item cat-item-23"><a href="http://www.ovais.me/category/css/">CSS</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="http://www.ovais.me/category/javascript/">JavaScript</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="http://www.ovais.me/category/json/">JSON</a>
+</li>
+	<li class="cat-item cat-item-6"><a href="http://www.ovais.me/category/php/">PHP</a>
+</li>
+	<li class="cat-item cat-item-17"><a href="http://www.ovais.me/category/svg/">SVG</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="http://www.ovais.me/category/web-technologies/">Web Technologies</a>
+</li>
+		</ul>
+</aside><aside id="nav_menu-2" class="widget widget_nav_menu"><ul id="menu-navigation" class="menu"><li id="menu-item-9" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9"><a href="http://www.ovais.me/about/">About Ovais</a></li>
+</ul></aside></div><!-- #secondary -->
+            <div class="site-description">
+                <img class="avatar" src="./Bootstrap 3 Modal - Easy way - Mohd Ovais_files/cropped-ovais.jpg" alt="Mohd Ovais">                <h2>Seeker, Learner, Researcher, Programmer</h2>
+            </div>
+        </div>        
+    </div>
+
+	<div id="content" class="site-content">
+
+
+    
+<article id="post-74" class="post-74 post type-post status-publish format-standard hentry category-javascript tag-bootstrap-3 tag-jquery">
+	<header class="entry-header">
+		<h1 class="entry-title">Bootstrap 3 Modal – Easy way</h1> 
+	</header><!-- .entry-header -->
+    
+    <ul class="entry-meta"><li class="posted-on"><span class="screen-reader-text">Posted on </span><a href="http://www.ovais.me/javascript/bootstrap-3-modal-easy-way/" rel="bookmark"><time class="entry-date published" datetime="2015-02-17T23:12:13+00:00">February 17, 2015</time><time class="updated" datetime="2015-03-12T14:29:27+00:00">March 12, 2015</time></a></li><li class="cat-links"><span class="screen-reader-text">Posted in </span><a href="http://www.ovais.me/category/javascript/" rel="category tag">JavaScript</a></li><li class="tags-links"><span class="screen-reader-text">Tagged </span><a href="http://www.ovais.me/tag/bootstrap-3/" rel="tag">Bootstrap 3</a>, <a href="http://www.ovais.me/tag/jquery/" rel="tag">jQuery</a></li></ul>
+	<div class="entry-content">
+		<p>For past one year I am mostly using Bootstrap 3 (UI framework) for RWD and rapid prototypes, and I discovered that non-UI-background developers usually face problems during the implementation of Modal popups. To make my work easier, I have written a wrapper function in JavaScript for Bootstrap Modal. It does not need any HTML semantics to be present in DOM. The necessary HTML is added to document body when it is called first time, and later the cached instance is used. I tried to make it as simple as I think of and utilized the most used Bootstrap options for Modal.</p>
+<p><span id="more-74"></span></p>
+<p>It is well suit to anyone who just wants to call a JavaScript function and pass minimum parameters like popup title and body html (or text)… etc.</p>
+<blockquote><p>Please be aware: It is NOT independent plugin, but rather a wrapper for <a title="Bootstrap 3 component: Modal" href="http://getbootstrap.com/javascript/#modals" target="_blank">Bootstrap Modal (modal.js) </a>. The jquery.js and bootstrap.js are required and to be loaded first.</p></blockquote>
+<div class="cp_embed_wrapper"><iframe id="cp_embed_myxJwR" src="./Bootstrap 3 Modal - Easy way - Mohd Ovais_files/myxJwR.html" scrolling="no" frameborder="0" height="320" allowtransparency="true" allowfullscreen="true" name="CodePen Embed" title="CodePen Embed 1" class="cp_embed_iframe " style="width: 100%; overflow: hidden;"></iframe></div>
+<p><script src="./Bootstrap 3 Modal - Easy way - Mohd Ovais_files/ei.js.download" async=""></script></p>
+<h4>Just open a modal popup</h4>
+<pre rel="" class="highlight"><code class="hljs">showBSModal({
+    title: <span class="hljs-string">"I am title"</span>,
+    body: <span class="hljs-string">"Lorem Ipsum is simply dummy text of the printing and typesetting industry."</span>
+});
+
+<span class="hljs-comment">//that's it! No HTML required <img draggable="false" class="emoji" alt="🙂" src="./Bootstrap 3 Modal - Easy way - Mohd Ovais_files/1f642.svg">
+</span></code></pre>
+<p><img src="./Bootstrap 3 Modal - Easy way - Mohd Ovais_files/bootsrap-modal-normal.png" alt="Bootstrap 3 Modal"></p>
+<h4>Small modal popup</h4>
+<pre rel="" class="highlight"><code class="hljs">showBSModal({
+    title: <span class="hljs-string">"I am title"</span>,
+    body: <span class="hljs-string">"Lorem Ipsum is simply dummy text of the printing and typesetting industry."</span>,
+    size: <span class="hljs-string">"small"</span>
+});</code></pre>
+<p><img src="./Bootstrap 3 Modal - Easy way - Mohd Ovais_files/bootsrap-modal-small.png" alt="Bootstrap 3 Modal - small"></p>
+<h4>Large modal poup</h4>
+<pre rel="" class="highlight"><code class="hljs">showBSModal({
+    title: <span class="hljs-string">"This is a large popup!"</span>,
+    body: <span class="hljs-string">"&amp;lt;p&amp;gt;Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32.&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.&amp;lt;/p&amp;gt;"</span>, 
+    size: <span class="hljs-string">"large"</span>
+});</code></pre>
+<p><img class="alignnone size-full wp-image-77" src="./Bootstrap 3 Modal - Easy way - Mohd Ovais_files/bootsrap-modal-largel.png" alt="Bootstrap 3 Modal - large" width="934" height="388" srcset="http://www.ovais.me/wp-content/uploads/2015/02/bootsrap-modal-largel.png 934w, http://www.ovais.me/wp-content/uploads/2015/02/bootsrap-modal-largel-300x125.png 300w" sizes="(max-width: 934px) 100vw, 934px"></p>
+<h4>Add custom buttons in footer</h4>
+<pre rel="" class="highlight"><code class="hljs">showBSModal({
+    title: <span class="hljs-string">"Do you want to logo out?"</span>,
+    body: <span class="hljs-string">"You will loose all unsaved work, press 'Cancel' to return to page or 'Confirm' to log out"</span>,
+    size: <span class="hljs-string">"small"</span>,
+    actions: [{
+        label: <span class="hljs-string">'Cancel'</span>,
+        cssClass: <span class="hljs-string">'btn-success'</span>,
+        onClick: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span></span>{
+            $(e.target).parents(<span class="hljs-string">'.modal'</span>).modal(<span class="hljs-string">'hide'</span>);
+        }
+    },{
+        label: <span class="hljs-string">'Confirm'</span>,
+        cssClass: <span class="hljs-string">'btn-danger'</span>,
+        onClick: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span></span>{
+            <span class="hljs-comment">//proceed to log out
+</span>
+        }
+    }]
+});</code></pre>
+<p><img class="alignnone size-full wp-image-76" src="./Bootstrap 3 Modal - Easy way - Mohd Ovais_files/bootsrap-modal-footer.png" alt="Bootsrap-modal-footer" width="334" height="248" srcset="http://www.ovais.me/wp-content/uploads/2015/02/bootsrap-modal-footer.png 334w, http://www.ovais.me/wp-content/uploads/2015/02/bootsrap-modal-footer-300x223.png 300w" sizes="(max-width: 334px) 100vw, 334px"></p>
+<h4>On show and on hide event listeners</h4>
+<pre rel="" class="highlight"><code class="hljs">showBSModal({
+    title: <span class="hljs-string">"Event Listener"</span>,
+    body: <span class="hljs-string">"You can perform certain actions onShow or onHide as well."</span>,
+    onShow: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span></span>{
+        <span class="hljs-comment">//do something
+</span>
+    },
+    onHide: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span></span>{
+        <span class="hljs-comment">//do something
+</span>
+    }
+});</code></pre>
+<h4>External HTML</h4>
+<p>When setting the remote URL, the <code>title, body and actions</code> values will be ignored. Rest of the features will work.</p>
+<pre rel="" class="highlight"><code class="hljs">showBSModal({
+    remote: <span class="hljs-string">'path/to/popup/html/file'</span>
+});</code></pre>
+<hr>
+<h2>Source Code</h2>
+<p>Just add below code in your helper/utility JavaScript file or save file from this link: ‘<a href="https://raw.githubusercontent.com/mohdovais/utilities/master/bootstrap.model.wrapper.js" target="_blank">bootstrap.modal.wrapper.js’</a></p>
+<pre rel="" class="highlight"><code class="hljs"><span class="hljs-built_in">window</span>.showBSModal = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">self</span><span class="hljs-params">(options)</span> </span>{
+
+    <span class="hljs-keyword">var</span> options = $.extend({
+            title : <span class="hljs-string">''</span>,
+            body : <span class="hljs-string">''</span>,
+            remote : <span class="hljs-literal">false</span>,
+            backdrop : <span class="hljs-string">'static'</span>,
+            size : <span class="hljs-literal">false</span>,
+            onShow : <span class="hljs-literal">false</span>,
+            onHide : <span class="hljs-literal">false</span>,
+            actions : <span class="hljs-literal">false</span>
+        }, options);
+
+    self.onShow = <span class="hljs-keyword">typeof</span> options.onShow == <span class="hljs-string">'function'</span> ? options.onShow : <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{};
+    self.onHide = <span class="hljs-keyword">typeof</span> options.onHide == <span class="hljs-string">'function'</span> ? options.onHide : <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{};
+
+    <span class="hljs-keyword">if</span> (self.$modal == <span class="hljs-literal">undefined</span>) {
+        self.$modal = $(<span class="hljs-string">'&amp;lt;div class="modal fade"&amp;gt;&amp;lt;div class="modal-dialog"&amp;gt;&amp;lt;div class="modal-content"&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;'</span>).appendTo(<span class="hljs-string">'body'</span>);
+        self.$modal.on(<span class="hljs-string">'shown.bs.modal'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(e)</span> </span>{
+            self.onShow.call(<span class="hljs-keyword">this</span>, e);
+        });
+        self.$modal.on(<span class="hljs-string">'hidden.bs.modal'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(e)</span> </span>{
+            self.onHide.call(<span class="hljs-keyword">this</span>, e);
+        });
+    }
+
+    <span class="hljs-keyword">var</span> modalClass = {
+        small : <span class="hljs-string">"modal-sm"</span>,
+        large : <span class="hljs-string">"modal-lg"</span>
+    };
+
+    self.$modal.data(<span class="hljs-string">'bs.modal'</span>, <span class="hljs-literal">false</span>);
+    self.$modal.find(<span class="hljs-string">'.modal-dialog'</span>).removeClass().addClass(<span class="hljs-string">'modal-dialog '</span> + (modalClass[options.size] || <span class="hljs-string">''</span>));
+    self.$modal.find(<span class="hljs-string">'.modal-content'</span>).html(<span class="hljs-string">'&amp;lt;div class="modal-header"&amp;gt;&amp;lt;button type="button" class="close" data-dismiss="modal" aria-label="Close"&amp;gt;&amp;lt;span aria-hidden="true"&amp;gt;&amp;amp;times;&amp;lt;/span&amp;gt;&amp;lt;/button&amp;gt;&amp;lt;h4 class="modal-title"&amp;gt;${title}&amp;lt;/h4&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div class="modal-body"&amp;gt;${body}&amp;lt;/div&amp;gt;&amp;lt;div class="modal-footer"&amp;gt;&amp;lt;/div&amp;gt;'</span>.replace(<span class="hljs-string">'${title}'</span>, options.title).replace(<span class="hljs-string">'${body}'</span>, options.body));
+
+    <span class="hljs-keyword">var</span> footer = self.$modal.find(<span class="hljs-string">'.modal-footer'</span>);
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">Object</span>.prototype.toString.call(options.actions) == <span class="hljs-string">"[object Array]"</span>) {
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>, l = options.actions.length; i &amp;lt; l; i++) {
+            options.actions[i].onClick = <span class="hljs-keyword">typeof</span> options.actions[i].onClick == <span class="hljs-string">'function'</span> ? options.actions[i].onClick : <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{};
+            $(<span class="hljs-string">'&amp;lt;button type="button" class="btn '</span> + (options.actions[i].cssClass || <span class="hljs-string">''</span>) + <span class="hljs-string">'"&amp;gt;'</span> + (options.actions[i].label || <span class="hljs-string">'{Label Missing!}'</span>) + <span class="hljs-string">'&amp;lt;/button&amp;gt;'</span>).appendTo(footer).on(<span class="hljs-string">'click'</span>, options.actions[i].onClick);
+        }
+    } <span class="hljs-keyword">else</span> {
+        $(<span class="hljs-string">'&amp;lt;button type="button" class="btn btn-default" data-dismiss="modal"&amp;gt;Close&amp;lt;/button&amp;gt;'</span>).appendTo(footer);
+    }
+
+    self.$modal.modal(options);
+}</code></pre>
+<h4>Minified JS</h4>
+<pre rel="" class="highlight"><code class="hljs"><span class="hljs-built_in">window</span>.showBSModal=<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">s</span><span class="hljs-params">(a)</span></span>{a=$.extend({title:<span class="hljs-string">""</span>,body:<span class="hljs-string">""</span>,remote:!<span class="hljs-number">1</span>,backdrop:<span class="hljs-string">"static"</span>,size:!<span class="hljs-number">1</span>,onShow:!<span class="hljs-number">1</span>,onHide:!<span class="hljs-number">1</span>,actions:!<span class="hljs-number">1</span>},a);s.onShow=<span class="hljs-string">"function"</span>==<span class="hljs-keyword">typeof</span> a.onShow?a.onShow:<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{};s.onHide=<span class="hljs-string">"function"</span>==<span class="hljs-keyword">typeof</span> a.onHide?a.onHide:<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{};<span class="hljs-keyword">void</span> <span class="hljs-number">0</span>==s.$modal&amp;amp;&amp;amp;(s.$modal=$(<span class="hljs-string">'&amp;lt;div class="modal fade"&amp;gt;&amp;lt;div class="modal-dialog"&amp;gt;&amp;lt;div class="modal-content"&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;'</span>).appendTo(<span class="hljs-string">"body"</span>),s.$modal.on(<span class="hljs-string">"shown.bs.modal"</span>,<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(a)</span></span>{s.onShow.call(<span class="hljs-keyword">this</span>,a)}),s.$modal.on(<span class="hljs-string">"hidden.bs.modal"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(a)</span></span>{s.onHide.call(<span class="hljs-keyword">this</span>,a)}));s.$modal.data(<span class="hljs-string">"bs.modal"</span>,!<span class="hljs-number">1</span>);s.$modal.find(<span class="hljs-string">".modal-dialog"</span>).removeClass().addClass(<span class="hljs-string">"modal-dialog "</span>+({small:<span class="hljs-string">"modal-sm"</span>,large:<span class="hljs-string">"modal-lg"</span>}[a.size]||<span class="hljs-string">""</span>));s.$modal.find(<span class="hljs-string">".modal-content"</span>).html(<span class="hljs-string">'&amp;lt;div class="modal-header"&amp;gt;&amp;lt;button type="button" class="close" data-dismiss="modal" aria-label="Close"&amp;gt;&amp;lt;span aria-hidden="true"&amp;gt;&amp;amp;times;&amp;lt;/span&amp;gt;&amp;lt;/button&amp;gt;&amp;lt;h4 class="modal-title"&amp;gt;${title}&amp;lt;/h4&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div class="modal-body"&amp;gt;${body}&amp;lt;/div&amp;gt;&amp;lt;div class="modal-footer"&amp;gt;&amp;lt;/div&amp;gt;'</span>.replace(<span class="hljs-string">"${title}"</span>, a.title).replace(<span class="hljs-string">"${body}"</span>,a.body));<span class="hljs-keyword">var</span> c=s.$modal.find(<span class="hljs-string">".modal-footer"</span>);<span class="hljs-keyword">if</span>(<span class="hljs-string">"[object Array]"</span>==<span class="hljs-built_in">Object</span>.prototype.toString.call(a.actions))<span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> b=<span class="hljs-number">0</span>,d=a.actions.length;b&amp;lt;d;b++)a.actions[b].onClick=<span class="hljs-string">"function"</span>==<span class="hljs-keyword">typeof</span> a.actions[b].onClick?a.actions[b].onClick:<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{},$(<span class="hljs-string">'&amp;lt;button type="button" class="btn '</span>+(a.actions[b].cssClass||<span class="hljs-string">""</span>)+<span class="hljs-string">'"&amp;gt;'</span>+(a.actions[b].label||<span class="hljs-string">"{Label Missing!}"</span>)+<span class="hljs-string">"&amp;lt;/button&amp;gt;"</span>).appendTo(c).on(<span class="hljs-string">"click"</span>,a.actions[b].onClick);<span class="hljs-keyword">else</span> $(<span class="hljs-string">'&amp;lt;button type="button" class="btn btn-default" data-dismiss="modal"&amp;gt;Close&amp;lt;/button&amp;gt;'</span>).appendTo(c); s.$modal.modal(a)};</code></pre>
+			</div><!-- .entry-content -->
+
+</article><!-- #post-## -->
+
+    
+	<nav class="navigation post-navigation" role="navigation">
+		<h2 class="screen-reader-text">Post navigation</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="http://www.ovais.me/javascript/jqgrid-with-backbonejs/" rel="prev">jqGrid with BackboneJS</a></div><div class="nav-next"><a href="http://www.ovais.me/svg/svg-unknown-territory/" rel="next">SVG: the unknown territory</a></div></div>
+	</nav>
+    
+<div id="comments" class="comments-area">
+
+	
+	
+	
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://www.ovais.me/javascript/bootstrap-3-modal-easy-way/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="http://www.ovais.me/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate="">
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" aria-required="true" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" aria-required="true" required="required"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200"></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="74" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="a3713cd8af"></p><p style="display: none;"></p>			<input type="hidden" id="ak_js" name="ak_js" value="1510553004255"></form>
+			</div><!-- #respond -->
+	
+</div><!-- #comments -->
+
+
+
+	</div>	
+</div>
+<footer id="colophon" class="site-footer" role="contentinfo">
+    <div class="site-info">
+        <div class="social-links"><ul id="menu-social-links" class="menu"><li id="menu-item-10" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10"><a href="https://twitter.com/mohdovais"><span class="screen-reader-text">@mohdovais</span></a></li>
+<li id="menu-item-16" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16"><a href="https://www.facebook.com/ovais.mohd"><span class="screen-reader-text">facebook</span></a></li>
+<li id="menu-item-25" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25"><a href="https://github.com/mohdovais"><span class="screen-reader-text">github</span></a></li>
+<li id="menu-item-27" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27"><a href="https://www.linkedin.com/in/mohdovais"><span class="screen-reader-text">LinkedIn</span></a></li>
+</ul></div>
+        <ul class="piped">
+            <li><a href="http://underscores.me/" target="_blank">Underscores</a> based theme
+            </li><li>using <a href="http://underscores.me/" target="_blank">SASS</a></li>
+            <li>made by <a href="http://www.ovais.me/" title="designer">Mohd Ovais</a></li>
+            <li>powered by <a href="http://wordpress.org/"><i class="icon icon-wordpress"></i> <span class="screen-reader-text">WordPress</span></a></li>
+        </ul>
+    </div>
+</footer>
+
+<script>
+(function ( ) {
+    var menu = document.getElementById('menu'), el = document.getElementById('menu-toggle');
+    var Event = window.Event || {prototype: {}};
+    if (!Event.prototype.preventDefault) {
+        Event.prototype.preventDefault = function () {
+            this.returnValue = false;
+        };
+    }
+
+    function onClick(e) {
+        e.preventDefault();
+        if (menu.className == "open") {
+            menu.className = "";
+            this.className = "";
+        } else {
+            menu.className = "open";
+            this.className = "active";
+        }
+    }
+
+    if (el.addEventListener) {
+        el.addEventListener('click', onClick, false);
+    } else if (el.attachEvent) {
+        el.attachEvent('onclick', onClick);
+    }
+})();
+
+WebFontConfig={google:{families:['Noto+Serif::latin']}};(function(){var wf=document.createElement('script');wf.src=('https:'==document.location.protocol?'https':'http')+'://ajax.googleapis.com/ajax/libs/webfont/1.5.10/webfont.js';wf.type='text/javascript';wf.async='true';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(wf,s);})();
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-59689242-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    <script type="text/javascript" src="./Bootstrap 3 Modal - Easy way - Mohd Ovais_files/minify-b1-comment-reply-25e317c055f58b01efd0794752141818.js.download"></script>
+
+
+
+
+<!-- Dynamic page generated in 0.634 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2017-11-13 11:33:40 -->
+
+<!-- Compression = gzip --></body></html>

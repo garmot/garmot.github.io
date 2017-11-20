@@ -1,0 +1,48 @@
+
+.table-responsive { 
+    overflow-x: initial; /*Remove the horizontal bar*/
+}
+
+.clickable:hover {
+    cursor: pointer;
+}
+
+.th-main{
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.th-main:hover {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.img-proj{
+    width:100%; 
+    border:solid 1px;
+}
+
+.img-proj:hover{
+}
+
+.div-proj{
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.div-proj:hover{
+    font-weight: bold;
+    /*text-decoration: underline;*/
+    -webkit-transform:scale(1.10); /* Safari and Chrome */
+    -moz-transform:scale(1.10); /* Firefox */
+    -ms-transform:scale(1.10); /* IE 9 */
+    -o-transform:scale(1.10); /* Opera */
+    transform:scale(1.10);
+}
+
+.navbar {
+    margin-bottom: 0px;
+    border-radius: 0px;
+}
+
