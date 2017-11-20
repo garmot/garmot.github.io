@@ -21,7 +21,7 @@ $(document).ready(function () {
 
             //2. Display the Result
             var diceDOM = document.querySelector('.dice'); //Reference the dice
-            diceDOM.src = 'dice-' + dice + '.png'; //Set the dice image
+            diceDOM.src = '../../Images/dice-' + dice + '.png'; //Set the dice image
             diceDOM.style.display = 'block'; //Show the hidden dice
 
             //3. Update the round score if the rolled number was not a 1
