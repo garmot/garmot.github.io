@@ -3,8 +3,9 @@ var _rootLocation;
 $(document).ready(function () {
     //alert("Index.js");
     _rootLocation = getRootLocation();
-    alert(window.location.host);
-    alert(window.location.pathname);
+    //alert(window.location.host);
+    //alert(window.location.pathname);
+    alert(_rootLocation);
 }); 
 
 function OpenBmiCalculator() {
@@ -21,7 +22,7 @@ function getRootLocation(){
     var ret ="";
     
     ret = window.location.host;
-    if (ret !== ""){
+    if (ret !== "" || ret !== undefined || ret !== null){
         ret = "http://" + _rootLocation;        
     } else {
         ret = window.location.pathname;
