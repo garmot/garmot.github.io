@@ -3,7 +3,8 @@ var _rootLocation;
 $(document).ready(function () {
     //alert("Index.js");
     _rootLocation = getRootLocation();
-    alert(_rootLocation);
+    alert(window.location.host);
+    alert(window.location.pathname);
 }); 
 
 function OpenBmiCalculator() {
