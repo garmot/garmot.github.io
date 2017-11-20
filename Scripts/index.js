@@ -3,11 +3,12 @@ var _rootLocation;
 $(document).ready(function () {
     //alert("Index.js");
     _rootLocation = getRootLocation();
-    alert(_rootLocation);
+    //alert(_rootLocation);
 }); 
 
 function OpenBmiCalculator() {
     //window.open("http://" + window.location.host + "/Projects/bmi-calculator/index.html"); 
+    alert(window.location.host;);
     window.open(_rootLocation + "/projects/bmi-calculator/index.html"); 
 }
 
@@ -31,4 +32,5 @@ function getRootLocation(){
     return ret;
 }
 
+ 
 
