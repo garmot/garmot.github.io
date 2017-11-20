@@ -22,7 +22,8 @@ function getRootLocation(){
     var ret ="";
     
     ret = window.location.host;
-    if (ret !== "" || ret !== undefined || ret !== null){
+    
+    if (ret.length > 0){
         ret = "http://" + _rootLocation;        
     } else {
         ret = window.location.pathname;
