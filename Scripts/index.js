@@ -7,14 +7,13 @@ $(document).ready(function () {
 }); 
 
 function OpenBmiCalculator() {
-    //window.open("http://" + window.location.host + "/Projects/bmi-calculator/index.html"); 
-    alert(window.location.host;);
-    window.open(_rootLocation + "/projects/bmi-calculator/index.html"); 
+    window.open("http://" + window.location.host + "/projects/bmi-calculator/index.html"); 
+    //window.open(_rootLocation + "/projects/bmi-calculator/index.html"); 
 }
 
 function OpenPigGame() {
-    //window.open("http://" + window.location.host + "/Labs/pig-game/index.html");
-    window.open(_rootLocation + "/labs/pig-game/index.html");
+    window.open("http://" + window.location.host + "/labs/pig-game/index.html");
+    //window.open(_rootLocation + "/labs/pig-game/index.html");
 } 
 
 function getRootLocation(){
