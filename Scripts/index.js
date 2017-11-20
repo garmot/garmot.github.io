@@ -20,6 +20,7 @@ function getRootLocation(){
     var ret ="";
     
     ret = window.location.host;
+    alert(ret);
     if (ret !== ""){
         ret = "http://" + _rootLocation;        
     } else {
