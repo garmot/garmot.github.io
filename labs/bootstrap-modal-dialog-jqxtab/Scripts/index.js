@@ -1,6 +1,6 @@
-﻿
+
 $(document).ready(function () {
-    $('#tabs').jqxTabs({
+    $('#jqxTab').jqxTabs({
         width: '100%',
         height: 200,
         position: 'top',

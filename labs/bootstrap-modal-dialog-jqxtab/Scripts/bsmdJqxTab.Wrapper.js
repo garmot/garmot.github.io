@@ -20,7 +20,7 @@ function showBootstrapModalDialogJqxTab() {
         '        <h4 class="modal-title">Boostrap Modal Dialog with Jqxtab</h4>' +
         '      </div>' +
         '      <div class="modal-body" id="bsmdJqxTabBody">' +
-        '           <div id="bsmdJqxTabBodyElem">' +
+        '           <div id="bsmdJqxTabBodyElem" class="col-sm-12 col-md-12">' +
         '           </div>' +
         '      </div>' +
         '      <div class="modal-footer" id="bsmdJqxTabFooter">' +
@@ -52,5 +52,8 @@ function showBootstrapModalDialogJqxTab() {
         //alert(window.location.origin);
         //$("#bsmdJqxTabBodyElem").load("http://" + window.location.host + "/Labs/BootStrapModalDialogJqxTab");
         //$("#bsmdJqxTabBodyElem").load(window.rootLocation + "/labs/bootstrap-modal-dialog-jqxtab/index.html");
+        //document.getElementById("bsmdJqxTabBodyElem").innerHTML='<object type="text/html" data="index.html" ></object>';
+        var contentLoc = window.rootLocation + "/labs/bootstrap-modal-dialog-jqxtab/index.html";
+        document.getElementById("bsmdJqxTabBodyElem").innerHTML='<object type="text/html" data="'+ contentLoc + '" ></object>';
     }
 }
