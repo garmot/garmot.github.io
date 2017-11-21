@@ -2,6 +2,7 @@ var _rootLocation;
 
 $(document).ready(function () {
     _rootLocation = getRootLocation();
+    window.rootLocation = _rootLocation;
     //alert(_rootLocation);
 }); 
 
