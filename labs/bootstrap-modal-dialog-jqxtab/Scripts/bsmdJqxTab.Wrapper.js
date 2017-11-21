@@ -51,6 +51,6 @@ function showBootstrapModalDialogJqxTab() {
         //$("#bsmdJqxTabBodyElem").load("/Labs/BootStrapModalDialogJqxTab");
         //alert(window.location.origin);
         //$("#bsmdJqxTabBodyElem").load("http://" + window.location.host + "/Labs/BootStrapModalDialogJqxTab");
-        $("#bsmdJqxTabBodyElem").load(window.rootLocation + "/labs/bootstrap-modal-dialog-jqxtab/index.html");
+        //$("#bsmdJqxTabBodyElem").load(window.rootLocation + "/labs/bootstrap-modal-dialog-jqxtab/index.html");
     }
 }
