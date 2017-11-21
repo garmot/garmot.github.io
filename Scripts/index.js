@@ -12,7 +12,7 @@ function getRootLocation(){
     ret = window.location.host;
     
     if (ret.length > 0){
-        ret = "http://" + window.location.host;        
+        ret = "https://" + window.location.host;        
     } else {
         ret = window.location.pathname;
         var xPos = ret.lastIndexOf("/");
