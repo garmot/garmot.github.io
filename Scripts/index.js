@@ -39,7 +39,9 @@ function OpenTgpMemberShipSystem() {
     window.open(_rootLocation + "/projects/tgp-jed-infosys/index.html"); 
 } 
 
-
+function showBootstrapModalDialogs(){
+    window.open(_rootLocation + "/labs/bootstrap-modal-dialogs/index.html");     
+}
 
 
 
