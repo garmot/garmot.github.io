@@ -20,8 +20,9 @@ function showBootstrapModalDialogJqxTab() {
         '        <h4 class="modal-title">Boostrap Modal Dialog with Jqxtab</h4>' +
         '      </div>' +
         '      <div class="modal-body" id="bsmdJqxTabBody">' +
-        '           <div id="bsmdJqxTabBodyElem" class="col-sm-12 col-md-12">' +
-        '           </div>' +
+        //'           <div id="bsmdJqxTabBodyElem"">' +
+        //'           </div>' +
+        '           <iframe id="iFrameContent" style="width: 100%; height: 350px;"></iframe>' +
         '      </div>' +
         '      <div class="modal-footer" id="bsmdJqxTabFooter">' +
         '        <button id="bootStrapModalDialogJqxTabSave" type="button" class="btn btn-primary">Save</button>' +
@@ -54,6 +55,7 @@ function showBootstrapModalDialogJqxTab() {
         //$("#bsmdJqxTabBodyElem").load(window.rootLocation + "/labs/bootstrap-modal-dialog-jqxtab/index.html");
         //document.getElementById("bsmdJqxTabBodyElem").innerHTML='<object type="text/html" data="index.html" ></object>';
         var contentLoc = window.rootLocation + "/labs/bootstrap-modal-dialog-jqxtab/index.html";
-        document.getElementById("bsmdJqxTabBodyElem").innerHTML='<object type="text/html" data="'+ contentLoc + '" ></object>';
+        //document.getElementById("bsmdJqxTabBodyElem").innerHTML='<object type="text/html" data="'+ contentLoc + '" ></object>';
+        $('#iFrameContent').attr('src', contentLoc);
     }
 }
