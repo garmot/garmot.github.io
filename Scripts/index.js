@@ -35,7 +35,9 @@ function OpenEosPaymentCalculator() {
     window.open(_rootLocation + "/projects/eos-payment-calculator/index.html"); 
 } 
  
-
+function OpenTgpMemberShipSystem() {
+    window.open(_rootLocation + "/projects/tgp-jed-infosys/index.html"); 
+} 
 
 
 
