@@ -2,143 +2,143 @@
 <html>
 
 <head>
-    <title>Garmond</title>
+	<title>Garmond</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="Library/jquery/jquery-3.2.1/jquery-3.2.1.js"></script>
-    <script src="Library/bootstrap/bootstrap-3.3.7/js/bootstrap.js"></script>
-    <link href="Library/bootstrap/bootstrap-3.3.7/css/bootstrap.css" rel="stylesheet">
-    <script src="Scripts/index.js"></script>
-    <link href="Styles/index.css" rel="stylesheet">
+	<script src="Library/jquery/jquery-3.2.1/jquery-3.2.1.js"></script>
+	<script src="Library/bootstrap/bootstrap-3.3.7/js/bootstrap.js"></script>
+	<link href="Library/bootstrap/bootstrap-3.3.7/css/bootstrap.css" rel="stylesheet">
+	<script src="Scripts/index.js"></script>
+	<link href="Styles/index.css" rel="stylesheet">
 </head>
 
 <body>
-    <nav class="navbar navbar-inverse">
-        <div class="container">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
+	<nav class="navbar navbar-inverse">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#" onclick="window.location.reload(true);">GarmondBacolod</a>
+			</div>
+			<div class="collapse navbar-collapse" id="mainNavBar">
+				<ul class="nav navbar-nav">
+					<li><a href="#MyProjects">Projects</a></li>
+					<li><a href="#MyLabs">Labs</a></li>
+					<li><a href="#">Curriculum Vitae</a></li>			
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Music</a></li>
+					<li><a href="#">Social</a></li>
+					<li><a href="#ContactMe">Contact</a></li>
+				</ul>
+			</div>
+		</div>				
+	</nav>
+
+	<div class="container">   
+		<div class="jumbotron">
+		    <center>
+			<img src="Images/garmond.jpg" class="img-circle img-responsive" alt="IMAGE" width="275" height="250" align="middle">
+			<section>
+			    <h3>Hello, my name is Garmond. <br> I'm a Developer living in Manila, PH.</h3>
+			</section>
+		    </center>
+		</div>
+
+		<div class="container-fluid bg-3 text-center" id="MyProjects">
+		    <h1 style="margin-bottom: 30px;">Some of my Works</h1>
+		    <div class="row col-sm-12 col-md-12">
+			<div class="col-sm-4 col-md-4 div-proj" onclick="OpenBmiCalculator();">
+			    <p>BMI Calculator</p>
+			    <img src="Images/bmi-calculator.png" class="img-responsive img-proj" alt="Image">
+			    <div class="row col-sm-12 col-md-12">
+				<span class="span-proj">HTML, CSS, Javascript, JQuery</span>
+			    </div>   
+			    <br>
+			</div>
+			<div class="col-sm-4 col-md-4 div-proj" onclick="OpenEosPaymentCalculator();">
+			    <p>End Of Service (K.S.A) Calculator</p>
+			    <img src="Images/eos-calculator.png" class="img-responsive img-proj" alt="Image">
+			    <div class="row col-sm-12 col-md-12">
+				<span class="span-proj">Powerbuilder</span>
+			    </div>                    
+			    <br>
+			</div>
+			<div class="col-sm-4 col-md-4 div-proj" onclick="OpenTgpMemberShipSystem();">
+			    <p>T.G.P. Membership System</p>
+			    <img src="Images/tgp-information-system.png" class="img-responsive img-proj" alt="Image">
+			    <div class="row col-sm-12 col-md-12">
+				<span class="span-proj">Powerbuilder, SQL Anywhere</span>
+			    </div>  
+			    <br>
+			</div>
+		    </div>
+		</div>
+
+		<div class="container-fluid bg-3 text-center" id="MyLabs">
+		    <center>
+			<h1 style="margin-top: 35px; margin-bottom: 30px;">My Labs</h1>
+		    </center>
+
+		    <div class="row col-sm-12 col-md-12">
+			<div class="col-sm-4 col-md-4 div-proj">
+			    <p>Lab name</p>
+			    <img src="Images/150x80.png" class="img-responsive img-proj" alt="Image">
+			    <br>
+			</div>
+			<div class="col-sm-4 col-md-4 div-proj" onclick="OpenPigGame();">
+			    <p>Pig Game</p>
+			    <img src="Images/pig-game.png" class="img-responsive img-proj" alt="Image">
+			    <div class="row col-sm-12 col-md-12">
+				<span class="span-proj">HTML, CSS, Javascript</span>
+			    </div>  
+			    <br>
+			</div>
+			<div class="col-sm-4 col-md-4 div-proj">
+			    <p>Lab name</p>
+			    <img src="Images/150x80.png" class="img-responsive img-proj" alt="Image">
+			    <br>
+			</div>
+		    </div>
+		</div>
+
+		<div class="table-responsive" style="margin-top: 35px;">
+		    <table class="table table-bordered">
+			<tr class="btn-primary">                
+			    <th>
+				<span>Bootstrap</span>
+			    </th>
+			</tr>
+			<tr class="clickable" onclick="showBootstrapModalDialogs();">
+			    <th class="btn-default th-main">
+				Modal Dialogs
+			    </th>
+			</tr>
+			<tr class="btn-primary">
+			    <th>JQWidgets</th>
+			</tr>
+			<tr class="clickable" onclick="showBootstrapModalDialogJqxTab();">
+			    <th class="btn-default th-main">
+				Boostrap Modal Dialog with jqxTab
+			    </th>
+			</tr>
+		    </table>
+		</div>
+
+		<div class="jumbotron" id="ContactMe">
+		    <center>
+			<button type="button" class="btn btn-default btn-lg" onclick="window.location.href='mailto:garmond.bacolod@live.com'">
+			    <span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;Email Me
 			</button>
-			<a class="navbar-brand" href="#" onclick="window.location.reload(true);">GarmondBacolod</a>
+			<br /><br />
+			<span>garmond.bacolod@live.com</span>
+		    </center>
 		</div>
-		<div class="collapse navbar-collapse" id="mainNavBar">
-			<ul class="nav navbar-nav">
-				<li><a href="#MyProjects">Projects</a></li>
-				<li><a href="#MyLabs">Labs</a></li>
-				<li><a href="#">Curriculum Vitae</a></li>			
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#">Music</a></li>
-				<li><a href="#">Social</a></li>
-				<li><a href="#ContactMe">Contact</a></li>
-			</ul>
-		</div>
-        </div>				
-    </nav>
-	
-    <div class="container">   
-        <div class="jumbotron">
-            <center>
-                <img src="Images/garmond.jpg" class="img-circle img-responsive" alt="IMAGE" width="275" height="250" align="middle">
-                <section>
-                    <h3>Hello, my name is Garmond. <br> I'm a Developer living in Manila, PH.</h3>
-                </section>
-            </center>
-        </div>
-
-        <div class="container-fluid bg-3 text-center" id="MyProjects">
-            <h1 style="margin-bottom: 30px;">Some of my Works</h1>
-            <div class="row col-sm-12 col-md-12">
-                <div class="col-sm-4 col-md-4 div-proj" onclick="OpenBmiCalculator();">
-                    <p>BMI Calculator</p>
-                    <img src="Images/bmi-calculator.png" class="img-responsive img-proj" alt="Image">
-                    <div class="row col-sm-12 col-md-12">
-                        <span class="span-proj">HTML, CSS, Javascript, JQuery</span>
-                    </div>   
-                    <br>
-                </div>
-                <div class="col-sm-4 col-md-4 div-proj" onclick="OpenEosPaymentCalculator();">
-                    <p>End Of Service (K.S.A) Calculator</p>
-                    <img src="Images/eos-calculator.png" class="img-responsive img-proj" alt="Image">
-                    <div class="row col-sm-12 col-md-12">
-                        <span class="span-proj">Powerbuilder</span>
-                    </div>                    
-                    <br>
-                </div>
-                <div class="col-sm-4 col-md-4 div-proj" onclick="OpenTgpMemberShipSystem();">
-                    <p>T.G.P. Membership System</p>
-                    <img src="Images/tgp-information-system.png" class="img-responsive img-proj" alt="Image">
-                    <div class="row col-sm-12 col-md-12">
-                        <span class="span-proj">Powerbuilder, SQL Anywhere</span>
-                    </div>  
-                    <br>
-                </div>
-            </div>
-        </div>
-        
-        <div class="container-fluid bg-3 text-center" id="MyLabs">
-            <center>
-                <h1 style="margin-top: 35px; margin-bottom: 30px;">My Labs</h1>
-            </center>
-            
-            <div class="row col-sm-12 col-md-12">
-                <div class="col-sm-4 col-md-4 div-proj">
-                    <p>Lab name</p>
-                    <img src="Images/150x80.png" class="img-responsive img-proj" alt="Image">
-                    <br>
-                </div>
-                <div class="col-sm-4 col-md-4 div-proj" onclick="OpenPigGame();">
-                    <p>Pig Game</p>
-                    <img src="Images/pig-game.png" class="img-responsive img-proj" alt="Image">
-                    <div class="row col-sm-12 col-md-12">
-                        <span class="span-proj">HTML, CSS, Javascript</span>
-                    </div>  
-                    <br>
-                </div>
-                <div class="col-sm-4 col-md-4 div-proj">
-                    <p>Lab name</p>
-                    <img src="Images/150x80.png" class="img-responsive img-proj" alt="Image">
-                    <br>
-                </div>
-            </div>
-        </div>
-        
-        <div class="table-responsive" style="margin-top: 35px;">
-            <table class="table table-bordered">
-                <tr class="btn-primary">                
-                    <th>
-                        <span>Bootstrap</span>
-                    </th>
-                </tr>
-                <tr class="clickable" onclick="showBootstrapModalDialogs();">
-                    <th class="btn-default th-main">
-                        Modal Dialogs
-                    </th>
-                </tr>
-                <tr class="btn-primary">
-                    <th>JQWidgets</th>
-                </tr>
-                <tr class="clickable" onclick="showBootstrapModalDialogJqxTab();">
-                    <th class="btn-default th-main">
-                        Boostrap Modal Dialog with jqxTab
-                    </th>
-                </tr>
-            </table>
-        </div>
-
-        <div class="jumbotron" id="ContactMe">
-            <center>
-                <button type="button" class="btn btn-default btn-lg" onclick="window.location.href='mailto:garmond.bacolod@live.com'">
-                    <span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;Email Me
-                </button>
-                <br /><br />
-                <span>garmond.bacolod@live.com</span>
-            </center>
-        </div>
-        <br />
-    </div>
+		<br />
+	</div>
 </body>
 
 </html>
