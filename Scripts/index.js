@@ -44,5 +44,7 @@ function showBootstrapModalDialogs(){
     window.open(_rootLocation + "/labs/bootstrap-modal-dialogs/index.html");     
 }
 
-
+function OpenCurriculumVitae(){
+    window.open(_rootLocation + "/projects/curriculum-vitae/index.html");
+}
 
