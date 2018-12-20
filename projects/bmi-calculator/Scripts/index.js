@@ -320,19 +320,19 @@ function calculate(calcType){
 	var heartDesc = $("#heartDesc");
 			
 	if(bmi>=0 && bmi <=18.4){
-		heartIcon = "images/heart-icon-underweight.png";
+		heartIcon = "Images/heart-icon-underweight.png";
 		hearDescVal = "Underweight (BMI less than 18.5)";
 		bmiType = "underweight";
 	}else if(bmi>=18.5 && bmi <=24.9){
-		heartIcon = "images/heart-icon-normal.png";	
+		heartIcon = "Images/heart-icon-normal.png";	
 		hearDescVal = "Healthy Weight (BMI 18.5 to 24.9)";	
 		bmiType = "healthy";			
 	}else if(bmi>=25 && bmi <=29.9){
-		heartIcon = "images/heart-icon-overweight.png";			
+		heartIcon = "Images/heart-icon-overweight.png";			
 		hearDescVal = "Overweight (BMI 25 to 30)";			
 		bmiType = "overweight";	
 	}else{
-		heartIcon = "images/heart-icon-obese.png";		
+		heartIcon = "Images/heart-icon-obese.png";		
 		hearDescVal = "Obese (BMI 30 +)";	
 		bmiType = "obese";	
 	}		
